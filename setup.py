@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="mlflow-plugin-proxy-auth",
-    version="0.0.3",
+    version="0.0.4",
     packages=find_packages(),
     install_requires=["mlflow"],
     entry_points={

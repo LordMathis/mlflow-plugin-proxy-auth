@@ -9,8 +9,8 @@ from requests.auth import AuthBase
 
 class ProxyAuthProvider(RequestAuthProvider):
     def __init__(self):
-        self.username = os.getenv("MLFLOW_TRACKING_USERNAME")
-        self.password = os.getenv("MLFLOW_TRACKING_PASSWORD")
+        self.username = os.getenv("MLFLOW_PROXY_USERNAME")
+        self.password = os.getenv("MLFLOW_PROXY_PASSWORD")
 
     def get_name(self):
         return "proxy_auth_provider"
