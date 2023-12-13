@@ -4,6 +4,7 @@ import os
 from mlflow.tracking.request_auth.abstract_request_auth_provider import (
     RequestAuthProvider,
 )
+from requests.auth import AuthBase
 
 
 class ProxyAuthProvider(RequestAuthProvider):
@@ -15,12 +16,18 @@ class ProxyAuthProvider(RequestAuthProvider):
         return "proxy_auth_provider"
 
     def get_auth(self):
-        # Add your Authelia Proxy-Authorization logic here
+        return ProxyAuth(self.username, self.password)
+
+
+class ProxyAuth(AuthBase):
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
+    def __call__(self, r):
         credentials = f"{self.username}:{self.password}"
         encoded_credentials = base64.b64encode(credentials.encode("utf-8")).decode(
             "utf-8"
         )
-        proxy_authorization_header = f"Basic {encoded_credentials}"
-
-        # Return a dictionary containing the header for authentication
-        return {"Proxy-Authorization": proxy_authorization_header}
+        r.headers["Proxy-Authorization"] = f"Basic {encoded_credentials}"
+        return r
