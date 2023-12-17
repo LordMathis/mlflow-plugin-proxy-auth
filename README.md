@@ -4,11 +4,10 @@ Provides authentication to Mlflow server using [Proxy-Authorization](https://dev
 
 ## Usage
 
-Clone the repo and install the package into your virtual environment.
+Install the package into your virtual environment.
 
 ```
-git clone https://github.com/LordMathis/mlflow-plugin-proxy-auth
-pip install .
+pip install mlflow-plugin-proxy-auth
 ```
 
 Set up mlflow environment variables
