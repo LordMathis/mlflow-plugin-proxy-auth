@@ -1,6 +1,6 @@
 # Mlflow Plugin Proxy Auth
 
-Provides authentication to Mlflow server using [Proxy-Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authorization).
+Provides authentication to Mlflow server using [Proxy-Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authorization) header.
 
 ## Usage
 
