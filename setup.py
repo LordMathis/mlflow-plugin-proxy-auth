@@ -1,7 +1,17 @@
 from setuptools import find_packages, setup
 
+from pathlib import Path
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
+
 setup(
     name="mlflow-plugin-proxy-auth",
+    author="Matúš Námešný",
+    author_email="matus@namesny.com",
+    description="Provides authentication to Mlflow server using Proxy-Authorization header.",
+    url = "https://github.com/LordMathis/mlflow-plugin-proxy-auth",
+    long_description_content_type="text/markdown",
+    long_description=long_description,
     version="0.0.4",
     packages=find_packages(),
     install_requires=["mlflow"],
