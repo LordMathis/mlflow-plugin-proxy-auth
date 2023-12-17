@@ -13,7 +13,6 @@ setup(
     url = "https://github.com/LordMathis/mlflow-plugin-proxy-auth",
     long_description_content_type="text/markdown",
     long_description=long_description,
-    version="0.0.4",
     packages=find_packages(),
     install_requires=["mlflow"],
     entry_points={
