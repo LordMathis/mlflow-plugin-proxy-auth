@@ -6,6 +6,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="mlflow-plugin-proxy-auth",
+    version='{{VERSION_PLACEHOLDER}}',
     author="Matúš Námešný",
     author_email="matus@namesny.com",
     description="Provides authentication to Mlflow server using Proxy-Authorization header.",
