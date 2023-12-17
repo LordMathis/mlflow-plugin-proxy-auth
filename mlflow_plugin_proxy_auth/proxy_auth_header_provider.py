@@ -1,3 +1,5 @@
+"""Mlflow plugin proxy auth"""
+
 import base64
 import os
 
@@ -8,6 +10,8 @@ from requests.auth import AuthBase
 
 
 class ProxyAuthProvider(RequestAuthProvider):
+    """"Mlflow plugin class"""
+
     def __init__(self):
         self.username = os.getenv("MLFLOW_PROXY_USERNAME")
         self.password = os.getenv("MLFLOW_PROXY_PASSWORD")
@@ -20,6 +24,8 @@ class ProxyAuthProvider(RequestAuthProvider):
 
 
 class ProxyAuth(AuthBase):
+    """Requests proxy auth class"""
+
     def __init__(self, username, password):
         self.username = username
         self.password = password
